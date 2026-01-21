@@ -21,7 +21,7 @@ class Signup:
         self.page.fill(self.password, password)
         self.page.click(self.submit)
 
-    # def set_dob(self, dob_ddmmyyyy):
-    #     iso_dob = convert_ddmmyyyy_to_iso(dob_ddmmyyyy)
-    #     self.page.fill("#dob", iso_dob)
+    def set_dob(self, dob_ddmmyyyy):
+        iso_dob = convert_ddmmyyyy_to_iso(dob_ddmmyyyy)
+        self.page.fill("#dob", iso_dob)
 
