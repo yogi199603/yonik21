@@ -21,3 +21,10 @@ def test_non_rig_email(page):
     for_got.forgot('yuihhu@yopmail.com')
     tost_message= page.wait_for_selector('//div[text()="This email is not registered"]').text_content()
     assert "This email is not registered"==tost_message
+
+def test_blank_data(page):
+    for_blank = Forgot(page)
+    for_blank.open()
+    for_blank.forgot("")
+    error_message = page.wait_for_selector("//div[text()='Email is required']").text_content()
+    assert "Email is required" == error_message
